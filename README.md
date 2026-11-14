@@ -44,6 +44,7 @@ sql-data-warehouse-project/
 ├── docs/                   the requirements, the diagrams and the notes
 ├── scripts/                the project scripts, in the order of the videos
 │   ├── init_database.sql   creates the database: run it first
+│   ├── init_schema.sql     creates the schema
 │   ├── bronze/             loads the raw files
 │   ├── silver/             cleans and prepares the data
 │   └── gold/               builds the tables for analysis
