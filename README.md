@@ -88,11 +88,13 @@ The **Silver Layer** transforms **Bronze** data by cleaning, standardizing, and 
 
 ### Building Gold Layer
 
-The **Gold Layer** presents business-ready data in a star schema, built from the cleansed **Silver Layer**. In this project, the **Gold** objects are PostgreSQL views, so they expose the analytical model without storing a separate copy of the data. See the [Sales Data Mart star schema](docs/data_model.png).
+The **Gold Layer** presents business-ready data in a star schema, built from the cleansed **Silver Layer**. In this project, the **Gold** objects are PostgreSQL views, so they expose the analytical model without storing a separate copy of the data. See the [Sales Data Mart](docs/data_model.png).
 
 - `gold.dim_customers` combines CRM customer attributes with ERP country, birthdate, and gender data. It assigns a surrogate `customer_key` for analysis.
 - `gold.dim_products` combines CRM product attributes with ERP category details and includes only current products (`prd_end_dt IS NULL`). It assigns a surrogate `product_key`.
 - `gold.fact_sales` provides sales order dates, shipping and due dates, sales amount, quantity, and price, linked to the customer and product dimensions.
+
+For a detailed description of the **Gold** data model, see the [Data Catalog](docs/data_catalog.md). It documents the purpose, columns, data types, and business meaning of each field in `gold.dim_customers`, `gold.dim_products`, and `gold.fact_sales`.
 
 After the **Silver** tables have been loaded, build and validate the **Gold Layer**:
 
