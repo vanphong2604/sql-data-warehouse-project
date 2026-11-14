@@ -48,7 +48,7 @@ sql-data-warehouse-project/
 │   ├── bronze/             loads the raw files
 │   ├── silver/             cleans and prepares the data
 │   └── gold/               builds the tables for analysis
-└── tests/                  checks the quality of the **Silver** and **Gold** data
+└── tests/                  checks the quality of the Silver and Gold data
 ```
 
 ---
