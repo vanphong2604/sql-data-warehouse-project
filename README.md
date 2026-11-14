@@ -73,8 +73,8 @@ The **Bronze** layer stores source data with minimal transformation. Run the scr
 
 1. Create the database with [`init_database.sql`](scripts/init_database.sql), then connect to the `datawarehouse` database. **Warning:** this script drops and recreates the database if it already exists.
 2. Create the schemas by running [`init_schema.sql`](scripts/init_schema.sql).
-3. Create the **Bronze** tables with [`ddl_bronze.sql`](scripts/**Bronze**/ddl_bronze.sql).
-4. Create the load procedure with [`proc_load_bronze.sql`](scripts/**Bronze**/proc_load_bronze.sql), then load the files by running `CALL bronze.load_bronze();`.
+3. Create the **Bronze** tables with [`ddl_bronze.sql`](scripts/bronze/ddl_bronze.sql).
+4. Create the load procedure with [`proc_load_bronze.sql`](scripts/bronze/proc_load_bronze.sql), then load the files by running `CALL bronze.load_bronze();`.
 
 The load procedure uses local file paths in its `COPY` commands. Update those paths to match where the CSV files are stored on your machine before running it.
 
